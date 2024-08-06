@@ -1,5 +1,10 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from .models import Tsar
 
-def index(request):
-    return render(request, template_name='romanovs/romanov.html')
+def romanovs(request):
+    tsars = Tsar.objects.all()
+    context = {
+        'tsars': tsars
+        }
+    
+    return render(request, template_name='romanovs/romanov.html', context=context)
