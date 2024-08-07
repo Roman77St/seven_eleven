@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/blog_style.css" %}">
+{% endblock css %}
+
 {% block content %}
+<div class="container">
+    <div class="blog">
+    {% for post in posts %}
+            <div class="post">
+                <img src="{{ post.image.url }}" alt="" class="post-image">
+                <h4 class="post-title">{{ post.title }}</h4>
+                <p class="post-text">
+                    {{ post.body }}
+                </p>
+                <a href="#" class="post-link">Читать...</a>
+            </div>
+    {% endfor %}
+    </div>
+</div>
 {% endblock content %}

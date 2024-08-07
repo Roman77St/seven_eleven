@@ -1,0 +1,36 @@
+
+.blog{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    border: 3px, solid, rgba(89, 141, 102, 1);
+    border-radius: 20px;
+}
+
+.post-image{
+    border-radius: 17px 17px 0 0;
+    width: 100%;
+}
+
+.post-title{
+    text-align: center;
+    padding: 5px;
+}
+
+.post-text{
+    padding: 0 10px;
+}
+
+.post-link{
+    font-size: 18px;
+    font-style: italic;
+    text-align: right;
+    padding: 0 10px 5px 0;
+}
+
