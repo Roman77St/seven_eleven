@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/blog_style.css" %}">
+{% endblock css %}
+
+{% block content %}
+<div class="container">
+    <div class="post-wrapper">
+        <div class="post-large">
+            <img src="{{ post.image.url }}" alt="" class="post-large-image">
+            <h4 class="post-large-title">{{ post.title }}</h4>
+            <p class="post-large-text">
+                {{ post.body }}
+            </p>
+        </div>
+        <div class="wrapper-post-small">
+            <div class="post-small">
+                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
+                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
+                <p class="post-small-text">
+                </p>
+            </div>
+            <div class="post-small">
+                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
+                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
+                <p class="post-small-text">
+                </p>
+            </div>
+            <div class="post-small">
+                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
+                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
+                <p class="post-small-text">
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
+

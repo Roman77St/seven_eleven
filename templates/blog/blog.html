@@ -13,9 +13,9 @@
                 <img src="{{ post.image.url }}" alt="" class="post-image">
                 <h4 class="post-title">{{ post.title }}</h4>
                 <p class="post-text">
-                    {{ post.body }}
+                    {{ post.body|truncatechars:350 }}
                 </p>
-                <a href="#" class="post-link">Читать...</a>
+                <a href="{% url "blog:post_detail" post.id %}" class="post-link">Читать...</a>
             </div>
     {% endfor %}
     </div>

@@ -34,3 +34,17 @@
     padding: 0 10px 5px 0;
 }
 
+.post-wrapper{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    gap: 10px;
+    padding: 20px;
+}
+
+.post-large-image{
+    width: 100%;
+}
+
+.post-small-image{
+    width: 100%;
+}
