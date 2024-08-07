@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'romanovs.apps.RomanovsConfig'
-
+    'romanovs.apps.RomanovsConfig',
+    'blog.apps.BlogConfig',
 
 ]
 
