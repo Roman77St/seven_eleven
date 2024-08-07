@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+    <div class="introduction">
+        <img src="{% static "romanovs/images/romanovy-fon.jpg" %}" alt="" class="introduction-img">
+        <a href="#" class="logo"><img class="introduction-logo-img" src="{% static "romanovs/images/Romanovs_Coat.png" %}" alt=""></a>
+        <h3 class="introduction-title">Династия Романовых</h3>
+
+        <p class="introduction-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde officiis
+            deserunt amet perspiciatis, voluptatem alias odit a ut rem accusantium facilis id non officia ea
+            necessitatibus odio enim et quam.</p>
+    </div>
+    <div class="cards">
+        {% for tsar in tsars %}
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="card card-back">
+                        <p class="back-side">{{ tsar.period_of_goverment }}</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="card">
+                        <img src="{{ tsar.image.url }}" alt="{{ tsar.name}}" class="card-img">
+                        <h4 class="card-title">{{ tsar.name }} {{ tsar.patronymic }}</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>
+{% endblock content %}
