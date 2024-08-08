@@ -12,31 +12,22 @@
             <img src="{{ post.image.url }}" alt="" class="post-large-image">
             <h4 class="post-large-title">{{ post.title }}</h4>
             <p class="post-large-text">
-                {{ post.body }}
+                {{ post.body|linebreaks }}
             </p>
         </div>
         <div class="wrapper-post-small">
-            <div class="post-small">
-                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
-                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
-                <p class="post-small-text">
-                </p>
-            </div>
-            <div class="post-small">
-                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
-                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
-                <p class="post-small-text">
-                </p>
-            </div>
-            <div class="post-small">
-                <img src="images/4UJvVeIQzDQ.jpg" alt="" class="post-small-image">
-                <h4 class="post-small-title">Две ночи в самолете: перелет на Фиджи</h4>
-                <p class="post-small-text">
-                </p>
-            </div>
+            {% for first_post in first_posts %}
+            <a href="{% url "blog:post_detail" first_post.id %}" class="small-post-link">
+                <div class="post-small">
+                    <img src="{{ first_post.image.url }}" alt="" class="post-small-image">
+                    <h4 class="post-small-title">{{ first_post.title }}</h4>
+                    <p class="post-small-text"> {{first_post.body|truncatechars:50}}
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
         </div>
 
     </div>
 </div>
 {% endblock content %}
-

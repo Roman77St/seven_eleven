@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Post(models.Model):
 
     title = models.CharField(max_length=250, verbose_name='Заголовок')
-    slug = models.SlugField(max_length=250, blank=True, verbose_name='Слаг')
+    slug = models.SlugField(max_length=250, blank=True, verbose_name='Слаг', unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts', verbose_name='автор')
     body = models.TextField(verbose_name='Текст')
     image = models.ImageField(upload_to='media/blog', blank=True, verbose_name='Изображение')

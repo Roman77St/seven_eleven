@@ -10,4 +10,5 @@ def blog(request):
 
 def post_detail(request, id):
     post = get_object_or_404(Post, id=id, status='PB')
-    return render(request, 'blog/post.html', context={'post': post})
+    posts = Post.objects.all().exclude(id=id)[:3]
+    return render(request, 'blog/post.html', context={'post': post, 'first_posts': posts})
