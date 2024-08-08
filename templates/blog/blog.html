@@ -15,7 +15,7 @@
                 <p class="post-text">
                     {{ post.body|truncatechars:350 }}
                 </p>
-                <a href="{% url "blog:post_detail" post.id %}" class="post-link">Читать...</a>
+                <a href="{{post.get_absolute_url}}" class="post-link">Читать...</a>
             </div>
     {% endfor %}
     </div>

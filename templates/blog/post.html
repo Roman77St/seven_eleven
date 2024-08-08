@@ -17,7 +17,7 @@
         </div>
         <div class="wrapper-post-small">
             {% for first_post in first_posts %}
-            <a href="{% url "blog:post_detail" first_post.id %}" class="small-post-link">
+            <a href="{{ first_post.get_absolute_url }}" class="small-post-link">
                 <div class="post-small">
                     <img src="{{ first_post.image.url }}" alt="" class="post-small-image">
                     <h4 class="post-small-title">{{ first_post.title }}</h4>
