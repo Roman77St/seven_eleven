@@ -27,7 +27,23 @@
             </a>
             {% endfor %}
         </div>
-
+        <div class="comments">
+            <h4 class="comments-title">Комментарии к посту</h4>
+            <p class="comments-count"> всего комментариев: 3</p>
+            <div class="comment">
+                {% for comment in comments %}
+                    <p class="comment-owner">Комментарий 1, {{ comment.name }}</p>
+                    <p class="comment-body">{{ comment.body }}</p>
+                {% endfor %}
+        </div>
+        <div class="comment-form">
+            <form action="{% url "blog:comment" post.id %}" method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <p class="comment-input"><input type="submit" value="Опубликовать"></p>
+            </form>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}

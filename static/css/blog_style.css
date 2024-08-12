@@ -48,3 +48,55 @@
 .post-small-image{
     width: 100%;
 }
+
+/* далее стиль для комментариев */
+.comments-title{
+    margin: 20px 0;
+}
+
+.comments-count{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.comment{
+    background-color: rgba(225, 237, 230, 1);
+}
+
+.comment-owner{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.comment-form{
+    margin: 30px 0 10px;
+    padding: 5px;
+    width: 30em;
+    border: 1px, solid, rgba(89, 141, 102, 1);
+    border-radius: 5px;
+}
+
+
+.comment-form input, textarea {
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 2px;
+  margin: 3px;
+  width: 50%;
+}
+
+.comment-input input{
+    background-color: rgba(89, 141, 102, 1);
+    width: 30%;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+}
+
+#id_body{
+    width: 90%;
+}
+
+.comment-form p {
+    margin: 10px 0;
+}

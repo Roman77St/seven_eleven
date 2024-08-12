@@ -112,6 +112,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 140px;
+    margin-bottom: 150px;
 
 }
 
@@ -165,7 +166,20 @@ body {
 	height: 80px;
     display: flex;
     justify-content: space-between;
-
 }
 
+/* -- пагинатор -- */
 
+.pagination{
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.step-links-style{
+    border: 1px solid rgba(89, 141, 102, 1);
+    border-radius: 10px;
+    margin: 0 5px;
+    padding: 3px;
+    background-color: rgba(225, 237, 230, 1);
+}
