@@ -1,3 +1,11 @@
-<div>
+{% extends "base.html" %}
+{% load static %}
 
-<div/>
+
+{% block content %}
+
+<div class="form-container">
+    <p class="form-text"> Ваш комментарий для поста: <span>"{{ post.title }}"</span> успешно опубликован. </p>
+    <a href="{{ post.get_absolute_url }}" class="form-back">Назад</a>
+</div>
+{% endblock content %}

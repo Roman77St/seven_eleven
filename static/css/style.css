@@ -183,3 +183,29 @@ body {
     padding: 3px;
     background-color: rgba(225, 237, 230, 1);
 }
+
+/* --подтверждение отправки формы-- */
+.form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-text{
+    font-size: 28px;
+    text-align: center;
+    margin: 50px;
+    width: 90%;
+}
+.form-text span{
+    font-style: italic;
+    font-size: 26px;
+}
+
+.form-back{
+    border: 2px, solid, rgba(89, 141, 102, 1);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px 10px;
+}

@@ -29,7 +29,13 @@
         </div>
         <div class="comments">
             <h4 class="comments-title">Комментарии к посту</h4>
-            <p class="comments-count"> всего комментариев: 3</p>
+            {% if comments %}
+            <p class="comments-count"> всего комментариев: {{ comments.count }}</p>
+            {% else %}
+            <p class="comments-count"> Комментарии пока отсутствуют</p>
+            {% endif %}
+            
+
             <div class="comment">
                 {% for comment in comments %}
                     <p class="comment-owner">Комментарий 1, {{ comment.name }}</p>
