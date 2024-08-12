@@ -64,9 +64,15 @@
 }
 
 .comment-owner{
-    margin: 10px;
+    margin: 5px;
     font-size: 12px;
-    border-top: 1px solid white;
+
+}
+
+.comment-body{
+    border-bottom: 1px solid white;
+    margin: 10px 20px;
+    padding-bottom: 10px;
 }
 
 .comment-form{

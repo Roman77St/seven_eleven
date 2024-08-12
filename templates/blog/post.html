@@ -38,8 +38,11 @@
 
             <div class="comment">
                 {% for comment in comments %}
-                    <p class="comment-owner">Комментарий 1, {{ comment.name }}</p>
+                    {% if comment.active %}
+                    <p class="comment-owner">Комментарий {{ forloop.counter }}, {{ comment.name }}</p>
+                    <p class="comment-owner">{{ comment.created }}</p>
                     <p class="comment-body">{{ comment.body }}</p>
+                    {% endif %}
                 {% endfor %}
         </div>
         <div class="comment-form">
