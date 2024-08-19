@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_POST
+
 from django.core.paginator import Paginator
 from .models import Post, Comment
 from .forms import CommentForm
@@ -37,4 +38,3 @@ def post_comment(request, post_id):
         comment.post = post
         comment.save()
     return render(request, 'blog/comment_form.html', context={'form': form, 'post': post, 'comment': comment})
-    

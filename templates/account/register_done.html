@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/account.css" %}">
+{% endblock css %}
+
+{% block content %}
+    <div >
+        <div class="login-header">
+            <h1>Приветствуем {{ new_user.first_name }}!</h1>
+            <p>Ваш аккаунт был успешно создан.
+               Вы можете войти в систему по ссылке:
+               <a href="{% url "login" %}" class="small-post-link">Войти</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}
+
