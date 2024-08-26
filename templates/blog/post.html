@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="{% static "css/blog_style.css" %}">
 {% endblock css %}
 
+{% block title %}{{ post.title }}{% endblock title %}
+
+
 {% block content %}
 <div class="container">
     <div class="post-wrapper">
