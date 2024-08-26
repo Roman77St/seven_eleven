@@ -19,11 +19,24 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Пароли не соответствуют друг другу')
         return cd['password2']
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if User.objects.filter(email=data).exists():
+            raise forms.ValidationError('Электронная почта уже используется')
+        return data
+
     
 class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email']
+
+        def clean_email(self):
+            data = self.cleaned_data['email']
+            qs = User.objects.exclude(id=self.inctanse.id).filter(emal=data)
+            if qs.exists():
+                raise forms.ValidationError('Электроная почта уже используется')
+            return data
 
 class ProfileEditForm(forms.ModelForm):
     class Meta:

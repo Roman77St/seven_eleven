@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.decorators.http import require_POST
+# from django.views.decorators.http import require_POST
 
 from django.core.paginator import Paginator
 from .models import Post, Comment
@@ -21,13 +21,12 @@ def post_detail(request, slug):
                              status='PB',
                              slug=slug,)
     posts = Post.objects.all().exclude(slug=slug)[:3]
-    comments = Comment.objects.all().filter(post=post.id)
+    comments = Comment.objects.filter(post=post.id)
     form = CommentForm()
     return render(request, 'blog/post.html', context={'post': post, 
                                                       'first_posts': posts, 
                                                       'comments': comments,
                                                       'form': form,})
-
 
 def post_comment(request, post_id):
     post = get_object_or_404(Post, id=post_id, status='PB')

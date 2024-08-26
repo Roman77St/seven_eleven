@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/shop_style.css" %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="container">
+    <div class="product">
+        <div class="product_item">
+            <img src="{{ product.image.url }}" alt="" class="product_image">
+            <h4 class="product_title">{{ product.name }}</h4>
+            <p class="product_price"> 
+                {{ product.price }} руб
+            </p>
+            <p class="product_description">
+                {{ product.description|linebreaks }}
+            </p>
+        </div>
+        <div class="first_products">
+            {% for first_product in first_products %}
+            <a href="{{ first_product.get_absolute_url }}" class="first_product_link">
+                <div class="first_product_item">
+                    <img src="{{ first_product.image.url }}" alt="" class="first_product_image">
+                    <h4 class="product_title">{{ first_product.name }}</h4>
+                    <p class="product_price"> {{first_product.price}} руб
+                    </p>
+                </div>
+            </a> 
+            {% endfor %}
+        </div>
+    </div>
+</div> 
+{% endblock content %}

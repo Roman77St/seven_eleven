@@ -46,7 +46,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: rgba(225, 237, 230, 1);
-    padding: 10px 80px 10px 0;
+    padding: 10px 10px 10px 0;
 }
 
 .header-inner-title {
@@ -62,13 +62,19 @@ body {
 
 .menu__list {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     width: 300px;
-    padding-top: 30px;
+    padding-top: 36px;
 }
 
 .menu__list-item {
     padding: 0 15px;
+}
+
+
+.menu__user_photo{
+    max-width: 40px;
+    max-height: 80px;
 }
 
 .logo {
@@ -221,3 +227,4 @@ body {
     justify-content: space-between;
     color: white;
 }
+

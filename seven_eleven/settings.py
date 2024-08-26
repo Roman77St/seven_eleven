@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'romanovs.apps.RomanovsConfig',
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [

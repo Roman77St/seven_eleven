@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/shop_style.css" %}">
+{% endblock css %}
+
+
+{% block content %}
+<h1 >Магазин</h2>
+<div class="product_cards">
+    {% for product in products %}
+            <div class="product_card">
+                <img src="{{ product.image.url }}" alt="{{ product.name}}" class="card_image">
+                <a href="{{ product.get_absolute_url }}" class="">
+                    <h4 class="card_title">{{ product.name }}</h4>
+                    <p>{{ product.price }}</p>
+                    <p>{{ product.description|truncatechars:150}}</p>
+                </a>
+            </div>
+    {% endfor%}
+</div>
+{% endblock content %}
