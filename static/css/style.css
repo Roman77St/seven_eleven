@@ -162,7 +162,7 @@ body {
     flex: 0 0 auto;
     background-color: rgba(225, 237, 230, 1);
     padding: 50px;
-    color: black;
+    color:black;
 	height: 80px;
     display: flex;
     justify-content: space-between;
@@ -208,4 +208,16 @@ body {
     align-items: center;
     margin: auto;
     padding: 5px 10px;
+}
+
+/* messages */
+
+.messages{
+    font-size: 24px;
+    background-color: rgb(89, 131, 105);
+    display: flex;
+    margin: 30px 10%;
+    padding: 20px 30px;
+    justify-content: space-between;
+    color: white;
 }

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/account.css" %}">
+{% endblock css %}
+
+{% block content %}
+    <div >
+        <div class="login-header">
+            <h1>Отредактируйте свой аккаунт</h1>
+            <p>Используйте эту форму, чтобы изменить аккаунт</p>
+        </div>
+        <div class="login-form">
+            <form method="post">
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                {% csrf_token %}
+                <p class="login-input"><input type="submit" value="Сохранить"></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

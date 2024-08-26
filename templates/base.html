@@ -30,7 +30,9 @@
                         </li>
                         <li class="menu__list-item">
                             {% if request.user.is_authenticated %}
-                            <p>{{ request.user.first_name|default:request.user.username }}</p>
+                            <a href="{% url "edit" %}" class="menu__list-link">
+                                <p>{{ request.user.first_name|default:request.user.username }}</p>
+                            </a>
                             <a href="{% url "logout" %}" class="menu__list-link">Выйти</a>
                             {% else %}
                             <a href="{% url "login" %}" class="menu__list-link">Войти</a>
@@ -41,6 +43,16 @@
             </div>
 
         </header>
+
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <a href="{% url "edit" %}" class="close">x</a>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
         <main class="main">
                     {% block content %}
                     {% endblock content %}
