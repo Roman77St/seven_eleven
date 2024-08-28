@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/shop_style.css" %}">
+{% endblock css %}
+
+{% block title %}Корзина{% endblock title %}
+
+{% block content %}
+<h1 class="cart-title">Ваша корзина</h1>
+<table class="cart">
+    <thead>
+        <tr>
+            <th>Изображение</th>
+            <th>Продукт</th>
+            <th>Количество</th>
+            <th>Удалить</th>
+            <th>Цена за 1 шт</th>
+            <th>Цена всего</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart %}
+            {% with product=item.product %}
+                <tr>
+                    <td>
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "romanovs/images/no_photo.jpg" %}{% endif %}">
+                        </a>
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <form action="{% url "cart:cart_remove" product.id %}" method="post">
+                            <input type="submit" value="Удалить">
+                            {% csrf_token %}
+                        </form>
+                    </td>
+                    <td class="">Р {{ item.price }}</td>
+                    <td class="">Р {{ item.total_price }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+        <tr class="cart_bottom">
+            <td>Всего</td>
+            <td colspan="4"></td>
+            <td class="">P {{ cart.get_total_price }}</td>
+        </tr>
+        </tbody>
+</table>
+<p class="cart-submit">
+    <a href="{% url "shop:product_list" %}" class="">Продолжить покупки</a>
+    <a href="#" class="">Оплатить</a>
+</p>
+{% endblock content %}

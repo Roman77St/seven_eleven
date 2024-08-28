@@ -14,25 +14,32 @@
 
 {% block content %}
     <div class="category-menu">
-        {% if category %}
-            <h2 >{{ category.name }}</h2>
-        {% else %}
-        <h2 >Категории</h2>
+        <h2 >SHOP</h2>
         <ul class="category-item">
-            {% for category in categories %}
-            <a href="{{ category.get_absolute_url }}" class="">
+            <a href="{% url "shop:product_list" %}" class="">
                 <li>
-                    <p class="category-title">{{ category.name }}</p>
+                    <p class="category-title"
+                    class="category-title">
+                        Все категории
+                    </p>
+                </li>
+             </a>
+            {% for c in categories %}
+            <a href="{{ c.get_absolute_url }}" class="">
+                <li>
+                    <p {% if category.slug == c.slug %}class="category-title-active"{% endif %} 
+                    class="category-title">
+                        {{ c.name }}
+                    </p>
                 </li>
             </a>
             {% endfor %}
         </ul>
-        {% endif %}
     </div>
     <div class="product_cards">
         {% for product in products %}
                 <div class="product_card">
-                    <img src="{{ product.image.url }}" alt="{{ product.name}}" class="card_image">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "romanovs/images/no_photo.jpg" %}{% endif %}" alt="" class="card_image">
                     <a href="{{ product.get_absolute_url }}" class="">
                         <h4 class="card_title">{{ product.name }}</h4>
                         <p>{{ product.price }}</p>

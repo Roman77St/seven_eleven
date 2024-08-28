@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'account.apps.AccountConfig',
     'shop.apps.ShopConfig',
+    'shopping_cart.apps.Shopping_cartConfig',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,7 @@ AUTHENTICATION_BACKENDS = [
 'django.contrib.auth.backends.ModelBackend',
 'account.authentication.EmailAuthBackend',
 ]
+
+CART_SESSION_ID = 'cart'
+
+USE_THOUSAND_SEPARATOR = True

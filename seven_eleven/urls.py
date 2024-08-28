@@ -24,7 +24,8 @@ urlpatterns = [
     path('romanovs/', include('romanovs.urls')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('account/', include('account.urls')),
-    path('shop/', include('shop.urls', namespace='shop'))
+    path('cart/', include('shopping_cart.urls', namespace='cart')),
+    path('shop/', include('shop.urls', namespace='shop')),
 ]
 
 if settings.DEBUG:
