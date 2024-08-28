@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_shop.html" %}
 {% load static %}
 
 {% block css %}
@@ -30,7 +30,14 @@
                         </a>
                     </td>
                     <td>{{ product.name }}</td>
-                    <td>{{ item.quantity }}</td>
+                    <td>
+                        <form action="{% url "cart:cart_add" product.id %}" method="post">
+                            {{ item.update_quantity_form.quantity }}
+                            {{ item.update_quantity_form.override }}
+                            <input type="submit" value="Изменить">
+                            {% csrf_token %}
+                            </form>
+                    </td>
                     <td>
                         <form action="{% url "cart:cart_remove" product.id %}" method="post">
                             <input type="submit" value="Удалить">
